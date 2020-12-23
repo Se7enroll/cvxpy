@@ -6,7 +6,7 @@ np.set_printoptions(precision=3)
 np.set_printoptions(suppress=True)
 
 #setup problem in cvxpy terms
-x = cp.Variable([n,n])
+x = cp.Variable([5,5])
 
 # maximize dollar y
 objective = cp.Maximize(x[0,0])     
