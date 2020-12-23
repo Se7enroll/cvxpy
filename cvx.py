@@ -5,24 +5,11 @@ import cvxpy as cp
 np.set_printoptions(precision=3)
 np.set_printoptions(suppress=True)
 
-# define rates
-rates = np.array([1.0, .769, .625, 105.0, .342])
-n = len(rates)
-
-# helper matrix ratemat is currency table in taha page 33
-ratemat = np.array([ rates/rates[i] for i in range(n) ])
-
-# indicator matrix with zero diagonal used to select x1, x3, x4, x5 in second equation and so forth
-ind = np.ones([n,n])
-np.fill_diagonal(ind, 0.0)
-
-rateind = ratemat * ind
-
-
 #setup problem in cvxpy terms
 x = cp.Variable([n,n])
 
-objective = cp.Maximize(x[0,0])     # maximize dollar y
+# maximize dollar y
+objective = cp.Maximize(x[0,0])     
 
 constraints = [
     x[0,0] + x[0,1] + x[0,2] + x[0,3] + x[0,4] - 1/.769*x[1,0] - 1/.625*x[2,0] - 1/105*x[3,0] - 1/.342*x[4,0] == 5,
