@@ -1,6 +1,5 @@
-"# cvxpy" 
 Example solution to Taha Operational Analysis example 2.3-2 with [CVXPY](https://www.cvxpy.org/).
-The constraints are verbatim the example, but should be rewritten in matrix form.
+The constraints are verbatim from the example, but should be rewritten in matrix form, see matrixVersion.py.
 
 ```pytho
 >>> print(f"Function value: {result}")
