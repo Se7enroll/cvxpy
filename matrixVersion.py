@@ -74,7 +74,7 @@ constraints2 = [
     
 ]
 
-# solve againt - now with the same result as the book (within 0.3% atleast...):
+# solve againt - now with the same result as the book (within 0.3 % atleast...):
 p2 = cp.Problem(objective, constraints2)
 result2 = p2.solve()
 print(f"Function value: {result2}")
